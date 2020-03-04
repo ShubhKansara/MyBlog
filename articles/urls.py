@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
     path('', views.article_list, name='article-list'),
-    path('(?P<slug>[w-]+)/', views.article_details, name='articles-details'),
+    re_path(r'^(?P<slug>[\w-]+)/', views.article_details, name='articles-details'),
 
 ] 
